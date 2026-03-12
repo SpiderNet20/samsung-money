@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Samsung Money - Google Play</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div id="app" class="min-h-screen flex flex-col">
+      <!-- Header -->
+      <header class="sticky top-0 z-50 bg-white border-b border-gray-200 px-4 py-3">
+        <div class="max-w-4xl mx-auto flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <img src="https://picsum.photos/seed/samsungmoney/512/512" alt="Logo" class="w-8 h-8 rounded-lg shadow-sm">
+            <span class="font-bold text-lg">Samsung Money</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <button class="p-2 hover:bg-gray-100 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" x2="12" y1="2" y2="15"/></svg>
+            </button>
+            <button class="p-2 hover:bg-gray-100 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main class="max-w-4xl mx-auto px-4 py-6 flex-1">
+        <!-- Main App Info -->
+        <section class="flex flex-col md:flex-row gap-6 mb-8">
+          <div class="flex-shrink-0">
+            <img src="https://picsum.photos/seed/samsungmoney/512/512" alt="Samsung Money" class="w-32 h-32 md:w-48 md:h-48 rounded-[22%] shadow-lg border border-gray-100">
+          </div>
+          <div class="flex flex-col justify-center flex-1">
+            <h1 class="text-2xl md:text-4xl font-bold mb-1">Samsung Money</h1>
+            <p class="text-[#01875f] font-medium text-lg mb-4">Samsung Electronics Co., Ltd.</p>
+            
+            <!-- Stats Row -->
+            <div className="flex items-center gap-8 overflow-x-auto no-scrollbar py-2 flex">
+              <div class="flex flex-col items-center min-w-[80px]">
+                <div class="flex items-center gap-1 font-bold">
+                  <span>4.8</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-gray-900"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <span class="text-xs text-gray-500">45,000 مراجعة</span>
+              </div>
+              <div class="w-px h-8 bg-gray-200 mx-4"></div>
+              <div class="flex flex-col items-center min-w-[80px]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-1"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                <span class="text-xs text-gray-500 font-bold">32 ميجابايت</span>
+              </div>
+              <div class="w-px h-8 bg-gray-200 mx-4"></div>
+              <div class="flex flex-col items-center min-w-[80px]">
+                <span class="font-bold">+1,000,000</span>
+                <span class="text-xs text-gray-500">عملية تنزيل</span>
+              </div>
+            </div>
+
+            <!-- Install Button -->
+            <div class="mt-6">
+              <button id="install-btn" class="install-btn w-full md:w-auto min-w-[200px]">
+                <div id="loader" class="hidden absolute inset-0 flex items-center justify-center bg-[#01875f]">
+                  <div class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                </div>
+                <span id="btn-text">تثبيت</span>
+                <div id="progress-bar" class="progress-bar" style="width: 0%"></div>
+              </button>
+              <p class="text-xs text-gray-500 mt-2 flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#01875f]"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                تم التحقق منه بواسطة Play Protect
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Screenshots -->
+        <section class="mb-10">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-xl font-bold">لقطات الشاشة</h2>
+            <div class="flex gap-2">
+              <button id="next-btn" class="p-1.5 rounded-full border border-gray-200 hover:bg-gray-50">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+              <button id="prev-btn" class="p-1.5 rounded-full border border-gray-200 hover:bg-gray-50">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+            </div>
+          </div>
+          <div id="screenshots-container" class="flex gap-4 overflow-x-auto no-scrollbar scroll-smooth pb-4">
+            <img src="https://picsum.photos/seed/money1/720/1280" alt="SS1" class="screenshot-img">
+            <img src="https://picsum.photos/seed/money2/720/1280" alt="SS2" class="screenshot-img">
+            <img src="https://picsum.photos/seed/money3/720/1280" alt="SS3" class="screenshot-img">
+            <img src="https://picsum.photos/seed/money4/720/1280" alt="SS4" class="screenshot-img">
+            <img src="https://picsum.photos/seed/money5/720/1280" alt="SS5" class="screenshot-img">
+          </div>
+        </section>
+
+        <!-- Description -->
+        <section class="mb-10">
+          <h2 class="text-xl font-bold mb-4">حول هذا التطبيق</h2>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Samsung Money هو تطبيق حديث يتيح لك الربح من الألعاب والتطبيقات وكسب المال من الإنترنت بسهولة. يمكنك من خلاله تجربة ألعاب جديدة، تحميل تطبيقات، وتنفيذ مهام بسيطة للحصول على نقاط يمكن تحويلها إلى مكافآت. تم تصميم التطبيق بواجهة بسيطة وسريعة لتناسب جميع المستخدمين.
+          </p>
+          <h3 class="font-bold mb-3">المميزات الرئيسية:</h3>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <li class="flex items-start gap-2 text-sm text-gray-600">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#01875f] mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>الربح من تجربة الألعاب الجديدة</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gray-600">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#01875f] mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>تحميل التطبيقات والحصول على مكافآت</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Reviews -->
+        <section class="mb-10">
+          <h2 class="text-xl font-bold mb-6">التقييمات والمراجعات</h2>
+          <div class="space-y-8">
+            <!-- Review 1 -->
+            <div class="review-card">
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <span class="font-bold text-sm">عبدالله القحطاني</span>
+              </div>
+              <p class="text-sm text-gray-600">بصراحة التطبيق ممتاز جدًا وكسبت منه فلوس بعد ما لعبت بعض الألعاب ونفذت المهام اليومية.</p>
+              <div class="dev-reply">
+                <span class="font-bold text-xs text-[#01875f]">رد المطوّر</span>
+                <p class="text-xs text-gray-600 italic">نشكرك على تقييمك الرائع، سعداء بأن التطبيق ساعدك في تحقيق أرباح.</p>
+              </div>
+            </div>
+            <!-- More reviews would go here -->
+          </div>
+        </section>
+      </main>
+
+      <footer class="bg-gray-50 border-t border-gray-200 py-10 px-4 text-center">
+        <p class="text-xs text-gray-500">© 2026 Samsung Electronics Co., Ltd. - جميع الحقوق محفوظة</p>
+      </footer>
+    </div>
+    <script type="module" src="/script.ts"></script>
+  </body>
+</html>
+
